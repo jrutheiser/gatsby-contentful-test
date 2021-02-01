@@ -16,13 +16,13 @@ const NavContent = styled.div`
 `;
 
 const Logo = styled(Link)`
-  font-size: 30px;
+  font-size: 22px;
   text-decoration: none;
   color: black;
   font-weight: 700;
   color: var(--color-bg);
   background: var(--color-text);
-  padding: 8px 15px;
+  padding: 14px 26px;
   transition: background 175ms ease;
   border-radius: 5px 14px 14px;
 
