@@ -62,7 +62,7 @@ export default function IconCards() {
       contentfulPageHome {
         iconCards {
           id
-          heading
+          title
           text {
             text
           }
@@ -91,7 +91,7 @@ export default function IconCards() {
                   width={80}
                   height={80}
                 />
-                <h3>{iconCard.heading}</h3>
+                <h3>{iconCard.title}</h3>
                 <p>
                   {iconCard.text.text}
                 </p>
