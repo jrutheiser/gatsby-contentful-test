@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{title} - {baseTitle}</title>
+        <title>{title} | {baseTitle}</title>
       </Helmet>
       <Hero />
       <IconCards />
