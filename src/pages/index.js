@@ -9,11 +9,12 @@ import MediaBlocks from '../components/homepage/MediaBlocks';
 
 const IndexPage = ({ data }) => {
   const { title } = data.contentfulPageHome;
+  const { baseTitle } = data.site.siteMetadata;
   
   return (
     <Layout>
       <Helmet>
-        <title>{title}</title>
+        <title>{title} - {baseTitle}</title>
       </Helmet>
       <Hero />
       <IconCards />
@@ -24,6 +25,11 @@ const IndexPage = ({ data }) => {
 
 export const queryPageHome = graphql`
   query {
+    site {
+      siteMetadata {
+        baseTitle: title
+      }
+    }
     contentfulPageHome {
       title
     }

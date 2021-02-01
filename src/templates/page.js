@@ -1,18 +1,30 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import PageContent from '../components/PageContent';
 
-const PageTemplate = ({ pageContext }) => (
-  <Layout>
-    <Helmet>
-      <title>{pageContext.title}</title>
-    </Helmet>
-    <PageContent
-      title={pageContext.title}
-      content={pageContext.content}
-    />
-  </Layout>
-);
-
-export default PageTemplate
+export default function PageTemplate({ pageContext }) {
+  const data = useStaticQuery(graphql`
+    query SiteMetaQuery {
+      site {
+        siteMetadata {
+          baseTitle: title
+        }
+      }
+    }
+  `);
+  const { baseTitle } = data.site.siteMetadata;
+  
+  return (
+    <Layout>
+      <Helmet>
+        <title>{pageContext.title} | {baseTitle}</title>
+      </Helmet>
+      <PageContent
+        title={pageContext.title}
+        content={pageContext.content}
+      />
+    </Layout>
+  );
+}
