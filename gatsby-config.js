@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Test Site",
     description: "Testing contentful sourced gatsby site.",
+    siteUrl: "https://gatsby-contentful-test-site.netlify.app"
   },
   plugins: [
     {
